@@ -66,3 +66,14 @@ TASKS:
 	nonlocal goto, setjmp(), longjmp()
 	Issue of ownership (pointer to a deleted object)
 	In-depth detail on constructor and destructor
+	how does size of work in array of string to get array size
+	how to get asssembly code of your program, and check the name decoration used in your program
+	type-safe linkage
+	anonymous union
+	memset, memcpy, strcat, c_str functions
+	how to determine number of arguments used by a function in program code
+	Need to learn more about delete and new function
+	constant folding
+	MERN stack
+	symbol table in c++
+	difference between character literal and character array in c++
