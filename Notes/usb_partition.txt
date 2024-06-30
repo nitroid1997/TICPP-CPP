@@ -1,0 +1,35 @@
+@echo off
+setlocal enabledelayedexpansion
+
+REM Replace with your desired partition size (in MB)
+set PARTITION_SIZE_MB=1024
+
+REM Step 1: Detect the USB drive letter
+set "DRIVE_LETTER="
+for %%a in (C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
+    if exist %%a:\ (
+        echo Found drive at %%a:\
+        set "DRIVE_LETTER=%%a"
+        goto :next
+    )
+)
+echo No USB drive found.
+pause
+exit /b
+
+:next
+REM Step 2: Calculate partition size in bytes
+set /a PARTITION_SIZE_BYTES=%PARTITION_SIZE_MB%*1024*1024
+
+REM Step 3: Create partition using diskpart
+echo Selecting disk %DRIVE_LETTER%
+echo. | diskpart /s "%~f0"
+goto :eof
+
+REM Diskpart commands start here
+select disk %DRIVE_LETTER%
+clean
+create partition primary size=%PARTITION_SIZE_BYTES%
+format fs=ntfs quick label="MyUSBPartition"
+assign
+exit

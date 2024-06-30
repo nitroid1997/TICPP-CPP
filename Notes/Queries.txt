@@ -1,0 +1,37 @@
+TASKS:
+
+	Linker references and library index
+	Startup module
+	try automate add-on lib addition task using perl or python
+	POSIX - compliant functions
+	cin and cout different use-cases
+	Why cannot I use "using namespace std;" inside a header
+	iostream manipulator
+	ifstream and ofstream use-cases
+	getline() use-cases
+	Standard template library STL
+	How to track enter press in C++
+	function with variable argument list (...)
+	why should a function not use more than 1 return statement
+	how to switch code depending on os, bit and architecture (x86, x64, arm, etc)
+	liblarian program
+	pass by types, like pass by value, pass by references, pass by address
+	how to print a smiley character on terminal
+	Try learning more about PRINT(ARG, VAR) like macros.
+	Explicit type cast uses and examples (static, reinterpet, dynamic, const cast)
+	static navigaction of class hierarchies
+	why cannot i do simultaneous const_cast on a constant or volatile
+	
+	
+	
+	CHAT GPT:
+	
+	Give me an indepth documentation that explains complete workflow of a winpe and OSD process in a windows x86 and x64 and ARM 64 system
+	
+	How does system loads a winpe from power on of system, explain it in details for a computer software dev
+	
+	Explain this above with including all exe and scripts involved in process
+	
+	Is there a way to do win 11 OS deployment through network, through WinPE without the use of any local ISO
+	
+	is this above method supported for ARM win11 os deployment

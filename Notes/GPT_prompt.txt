@@ -1,0 +1,88 @@
+
+
+a simple powershell script to build winpe using copype and makewinpemedia, also how ti inject driver in between
+
+
+# Variables
+$WinPEArch = "amd64"
+$WinPEPath = "C:\WinPE_amd64"
+$ADKPath = "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit"
+
+# Step 1: Create WinPE environment using copype
+cmd /c "$ADKPath\Deployment Tools\amd64\DISM\copype.cmd $WinPEArch $WinPEPath"
+
+# Step 2: Mount the WinPE image for driver injection
+$MountDir = "$WinPEPath\Mount"
+cmd /c "$ADKPath\Deployment Tools\amd64\DISM\dism.exe /Mount-Image /ImageFile:`"$WinPEPath\media\sources\boot.wim`" /Index:1 /MountDir:`"$MountDir`""
+
+# Step 3: Inject drivers into the WinPE image
+$DriversPath = "C:\Drivers"
+cmd /c "$ADKPath\Deployment Tools\amd64\DISM\dism.exe /image:`"$MountDir`" /add-driver /driver:`"$DriversPath`" /recurse"
+
+# Step 4: Unmount the image and commit changes
+cmd /c "$ADKPath\Deployment Tools\amd64\DISM\dism.exe /Unmount-Image /MountDir:`"$MountDir`" /Commit"
+
+# Step 5: Create bootable WinPE media
+$ISOPath = "C:\WinPE_amd64.iso"
+cmd /c "$ADKPath\Deployment Tools\amd64\Oscdimg\oscdimg.exe -n -m -bc:`"$WinPEPath\media\boot\etfsboot.com`" `"$WinPEPath\media`" `"$ISOPath`""
+
+Write-Host "WinPE build complete. ISO file created at: $ISOPath"
+
+
+
+########################### partition script ##################################
+
+# Replace with your desired partition size in MB
+$PARTITION_SIZE_MB = 1024
+
+# Step 1: Detect the USB drive letter
+$driveLetter = Get-WmiObject Win32_Volume | Where-Object { $_.DriveType -eq 2 } | Select-Object -ExpandProperty DriveLetter
+if (-not $driveLetter) {
+    Write-Host "No USB drive found."
+    pause
+    exit
+}
+
+Write-Host "Found drive at $driveLetter:"
+
+# Step 2: Calculate partition size in bytes
+$PARTITION_SIZE_BYTES = $PARTITION_SIZE_MB * 1MB
+
+# Step 3: Create partition using Diskpart
+$script = @"
+select disk $driveLetter
+clean
+create partition primary size=$PARTITION_SIZE_BYTES
+format fs=ntfs quick label='MyUSBPartition'
+assign
+exit
+"@
+
+Invoke-Expression -Command "echo $($script)" | diskpart
+
+
+######################### 
+I am currently in a winpe, give me a script that will trigger os deployment once triggered from winpe, it should be a powershell script, or a bat script, using tools from ADK, also give ways to add custom scripts and sequencing then in during OSD
+
+giveme the above without any sccm or mdt uses
+
+@echo off
+
+REM Replace with your deployment commands or tools
+REM Example: Diskpart to clean and create partitions, imagex to apply an image, etc.
+
+REM Clean and prepare disk (example using Diskpart)
+echo Cleaning disk...
+echo select disk 0 > %TEMP%\diskpart_script.txt
+echo clean >> %TEMP%\diskpart_script.txt
+diskpart /s %TEMP%\diskpart_script.txt
+
+REM Apply an image (example using imagex)
+echo Applying image...
+imagex /apply D:\Images\YourImage.wim 1 C:\
+
+REM Additional customization or scripts can be added here
+
+pause
+exit /b
+

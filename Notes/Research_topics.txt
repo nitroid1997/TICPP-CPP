@@ -1,0 +1,68 @@
+TASKS:
+
+	Linker references and library index
+	Startup module
+	try automate add-on lib addition task using perl or python
+	POSIX - compliant functions
+	cin and cout different use-cases
+	Why cannot I use "using namespace std;" inside a header
+	iostream manipulator
+	ifstream and ofstream use-cases
+	getline() use-cases
+	Standard template library STL
+	How to track enter press in C++
+	function with variable argument list (...)
+	why should a function not use more than 1 return statement
+	how to switch code depending on os, bit and architecture (x86, x64, arm, etc)
+	liblarian program
+	pass by types, like pass by value, pass by references, pass by address
+	how to print a smiley character on terminal
+	Try learning more about PRINT(ARG, VAR) like macros.
+	Explicit type cast uses and examples (static, reinterpet, dynamic, const cast)
+	static navigaction of class hierarchies
+	why cannot i do simultaneous const_cast on a constant or vaolatile
+	understand reinterpet_cast in detail
+	learn about asm keyword
+	check: / 32.453f = 01000000 10111000 00111001 01000000 11100111 11111011 10001011 01101100
+	how to set, reset debug flag through makefiles
+	what is #pragma
+	practice some complicated function pointer declaration and definations
+	endl VS '\n'
+	for(const auto &x: data){}
+	standart array and c array
+	read in detail about make and get some good reference
+	download and read "Managing projects with Make" by oram and talbott
+	header vs object vs dll vs lib
+	stack and heap, how to access both and ways to use it
+	malloc, calloc, realloc, free in C
+	heap compaction, fragmented heap, special memory handle
+	how does delete [] arrayname knows size of the array while deleting from heap
+	How does linker resolve unresolved extenal reference
+	Name clashes in C liblaries, and how is it resolve
+	Read about original C compiler cfront
+	.cmd VS .bat VS .exe
+	.edi, .dat, .sdi file and how to open it
+	object-based VS object-oriented
+	access control in c++
+	Variable argument list in c and c++
+	file static
+	what is pragma
+	redeclaration of function and structure in C++
+	C and C++ pre-processor
+	How to avoid duplicate inclusion of user defined header files in c++
+	preprocessor and preprocessor directives in C++
+	system names in c++ (variables with leading underscore)
+	include guards
+	new operator and cloning process in c++
+	how to produce assemble language from c and c++ program: g++ -S -masm=intel -g ex10.cpp -o ex10.s
+	different ways to call constructors and destructors
+	why does char ptr need to be casted to void*, in cout for printing it's address
+    how to identify double deletion in c++, and how to avoid
+	try to set debug flag through cmd argument and use it in program
+	incomplete type specification
+	access control and encapsulation
+	How are access control handled between struct and class, and during compilation, linking and runtime
+	fragile baseclass problem, Handle class & Chesire cat pointer
+	nonlocal goto, setjmp(), longjmp()
+	Issue of ownership (pointer to a deleted object)
+	In-depth detail on constructor and destructor

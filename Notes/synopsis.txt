@@ -1,0 +1,6 @@
+C++
+DSA & Algorithm
+C# & .net
+python
+powershell & Cmake
+SQL

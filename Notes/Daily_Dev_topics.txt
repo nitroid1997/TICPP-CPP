@@ -1,0 +1,15 @@
+Typescript and flyde
+Types of API and rest API
+llama GenAI model study
+Structure of URL: scheme :// authority / path [?query][#fragment]
+CRUD in PhP
+HTTPS methoda use-cases
+Versioning and how to maintain it in different products
+Docker
+Htmx
+Godot
+first chat bot and chat bot in general
+GAN network
+GPT
+Transformers in AI
+RAG in AI
