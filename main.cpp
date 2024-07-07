@@ -802,6 +802,7 @@ int main(int argc, char *argv[]){
     */
     
    
-
+    int waiter;
+    cin >> waiter;
     return 0;
 }
