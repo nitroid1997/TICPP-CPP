@@ -15,6 +15,12 @@ using namespace Exercise_7;
 
 using std::vector;
 
+namespace TrivialObjects {
+
+    void cmd_halter();
+
+};
+
 namespace CLikeLib {
 
     typedef struct CStashTag {

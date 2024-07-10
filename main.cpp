@@ -22,6 +22,7 @@ using namespace Exercise_5;
 using namespace Exercise_7;
 using namespace CLikeLib;
 using namespace CppLikeLib;
+using namespace TrivialObjects;
 using namespace HandlerClass;
 using namespace PushDownStack;
 using namespace IntLinkedList;
@@ -755,7 +756,7 @@ int main(int argc, char *argv[]){
     s2.print(cout);
     */
 
-    ///* // Chp 7, Ex 1.
+    /* // Chp 7, Ex 1.
     Text fromSampleData("Resource/SampleData.txt","");
     // Text fromSampleData("Resource/SampleData.txt",1);
     Text emptyData;
@@ -769,7 +770,7 @@ int main(int argc, char *argv[]){
     cout << ".............................." << endl;
     emptyData.print("\nHello..!");
     emptyData.caller(1,2.3);
-    //*/
+    */
 
     /* // Chp 7, Ex 6.
     string lines[] = {"one", "two", "three", "four", "five"};
@@ -801,8 +802,7 @@ int main(int argc, char *argv[]){
         cout << "stringStash.fetch(" << k << ") = "<< cp << endl;
     */
     
-   
-    int waiter;
-    cin >> waiter;
+    
+    cmd_halter();
     return 0;
 }

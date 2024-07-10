@@ -5,9 +5,19 @@
 #include <vector>
 
 using std::cout;
+using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+
+namespace TrivialObjects {
+
+    void cmd_halter() {
+        int cmd_halter;
+        cin >> cmd_halter;
+    }
+
+};
 
 namespace CLikeLib {
 
